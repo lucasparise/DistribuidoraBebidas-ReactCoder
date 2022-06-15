@@ -1,0 +1,31 @@
+/* estilo nav */
+
+.boxHeader{
+    grid-area: header;
+    background: linear-gradient(to bottom, rgb(110, 196, 250), rgb(129, 222, 245));
+    border-bottom: solid darkblue 1px;
+}
+
+.menu{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+
+.itemMenu{
+    font-size: 17px;
+    transition: all 0.2s;
+    margin: 10px;
+}
+
+.itemMenu:hover{
+    font-size: 20px;
+}
+
+@media (max-width: 768px){ 
+    .itemMenu{
+        font-size: 12px;
+        padding: 1%;
+        margin: 1%;
+    }
+}
