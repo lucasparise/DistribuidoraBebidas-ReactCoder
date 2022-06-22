@@ -1,0 +1,12 @@
+.bgOndas{
+    background: url(../assets/bg-ondas.jpg) repeat center bottom;
+}
+
+.cuerpoProducto{
+    margin: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
