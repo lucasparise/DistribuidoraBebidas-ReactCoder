@@ -8,6 +8,7 @@ function App() {
     <body className="App">
       <NavBar/>
       <ItemListContainer/>
+      
     </body>
   );
 }

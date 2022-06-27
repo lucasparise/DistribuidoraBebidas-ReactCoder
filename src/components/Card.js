@@ -1,5 +1,21 @@
+import { ToastContainer, toast } from 'react-toastify';
 import './Card.css';
+import ItemCount from "./ItemCount.js"
 import imgPrueba from "../assets/imgPrueba.webp";
+
+
+const onAdd =  (cantidad) =>{
+    toast.success('${cantidad} items agregados al carrito', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+}
+
 
 function Card(){
     return(
@@ -14,10 +30,11 @@ function Card(){
                     <p className="card-text">Descripcion Producto.</p>
                     <p className="card-text text-muted">Precio</p>
                 </div>
-                <button className='btn btn-primary'>Agregar al carrito</button>
+                <ItemCount stock='5' initial='1' onAdd={onAdd}/>
             </div>
             </div>
         </div>
     )
 }
+
 export default Card;
