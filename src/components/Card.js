@@ -3,21 +3,20 @@ import './Card.css';
 import ItemCount from "./ItemCount.js"
 import imgPrueba from "../assets/imgPrueba.webp";
 
-
-const onAdd =  (cantidad) =>{
-    toast.success('${cantidad} items agregados al carrito', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
-}
-
-
 function Card(){
+
+    const onAdd =  (cantidad) =>{
+        toast.success( cantidad + " items agregados al carrito", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
+
     return(
         <div className="card mb-3 anchoMax">
             <div className="row g-0">
@@ -36,5 +35,4 @@ function Card(){
         </div>
     )
 }
-
 export default Card;

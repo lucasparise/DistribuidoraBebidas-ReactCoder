@@ -38,7 +38,7 @@ function ItemCount({stock, initial, onAdd}){
             <input className='form-control text-center fw-bold' type='text' value={num} disabled readOnly></input>
             <div className='d-flex'>
                 <button className='btn btn-outline-primary' onClick={sumar}>+</button>
-                <button className='btn btn-primary'/*  onClick={() => this.onAdd(num)} */>Agregar</button>
+                <button className='btn btn-primary' onClick={() =>onAdd(num)}>Agregar</button>
             </div>
         </div> 
     )
