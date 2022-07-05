@@ -1,6 +1,6 @@
 import './ItemCount.css';
 import {useState} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 
 function ItemCount({stock, initial, onAdd}){
 
@@ -33,7 +33,7 @@ function ItemCount({stock, initial, onAdd}){
     return(
         
         <div className='input-group justify-content-evenly px-5'>
-            <ToastContainer />
+            
             <button className='btn btn-outline-primary' onClick={restar}>-</button>
             <input className='form-control text-center fw-bold' type='text' value={num} disabled readOnly></input>
             <div className='d-flex'>
