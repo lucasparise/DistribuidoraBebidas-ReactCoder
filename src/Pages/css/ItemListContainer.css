@@ -1,5 +1,5 @@
 .bgOndas{
-    background: url(../assets/bg-ondas.jpg) repeat center bottom;
+    background: url(/src/assets/bg-ondas.jpg) repeat center bottom;
 }
 
 .cuerpoProducto{

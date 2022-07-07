@@ -1,14 +1,30 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer'
-import { ToastContainer, toast } from 'react-toastify';
+import {Navigate, Routes, Route} from 'react-router-dom';
+import NavBar from './Pages/NavBar';
+import Home from './Pages/Home';
+import Footer from './Pages/footer';
+/* import Contacto from "./pages/contacto" */
+import ItemListContainer from './Pages/ItemListContainer';
+import ItemDetailContainer from './components/itemDetailContainer';
+import { ToastContainer} from 'react-toastify';
 
 function App() {
   return (
     <body className="App">
       <NavBar/>
-      <ItemListContainer/>
+
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path="/inicio" element={<Home/>}></Route>
+        <Route path="/productos" element={<ItemListContainer />}></Route>
+        {/* <Route path="/contacto" element={<Contacto/>}></Route> */}
+          <Route path="/producto/:productName" element={<ItemDetailContainer />}></Route>
+          <Route path="/categoria/:category" element={<ItemListContainer />}></Route>
+      </Routes>
+      
+      
       <ToastContainer />
+      <Footer/>
     </body>
   );
 }

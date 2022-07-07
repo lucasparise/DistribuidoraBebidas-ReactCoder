@@ -2,8 +2,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import './Card.css';
 import ItemCount from "./ItemCount.js"
 import ItemDetail from './itemDetail';
+import { Link } from "react-router-dom";
+import React from 'react';
 
-function Card({Img, Nombre, Descripcion, Precio, Stock, ID}){
+function Card({Img, Nombre, Descripcion, Precio, Stock, ID, categoria}){
 
     const onAdd =  (cantidad) =>{
         toast.success( cantidad + " items agregados al carrito", {
@@ -21,14 +23,16 @@ function Card({Img, Nombre, Descripcion, Precio, Stock, ID}){
         <div className="card mb-3 anchoMax">
             <div className="row g-0">
             <div className="col-sm-4">
-            <button className='btn btn-outline-primary p-1 m-0'>
-                <img src={Img} className="img-fluid rounded-start" alt=""/>
-            </button>
+            <Link to={`/producto/${Nombre.replace(" ", "-")}`}>
+                <button className='btn btn-outline-primary p-1 m-0'>
+                    <img src={Img} className="img-fluid rounded-start" alt=""/>
+                </button>
+            </Link>
             </div>
             <div className="col-sm-8">
                 <div className="card-body">
                     <h5 className="card-title">{Nombre}.</h5>
-                   {/*  <p className="card-text">{Descripcion}.</p> */}
+                    <p className="card-text">Categoria: {categoria}.</p>
                     <p className="card-text text-muted">{Precio}</p>
                 </div>
                 <ItemCount stock={Stock} initial='1' onAdd={onAdd}/>

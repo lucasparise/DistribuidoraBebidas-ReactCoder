@@ -1,4 +1,10 @@
-function ItemDetail(producto){
+import React, { useState } from 'react';
+import ItemCount from './ItemCount';
+import { Link } from "react-router-dom";
+
+
+function ItemDetail(props){
+    const producto = props.productoDetalle[0];
 
     return(
         <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
