@@ -37,7 +37,8 @@ function ItemDetail(props){
                     <p className="card-text text-muted">{producto.Precio}</p>
                 </div>
                 {contador === true &&<ItemCount stock={producto.Stock} initial='1' onAdd={onAdd}/>}
-                {comprado === true && <Link to={`/cart`} className='btn btn-primary'>Finalizar Compra</Link>}
+                {comprado === true && <Link to={`/cart`} className='btn btn-success'>Finalizar Compra</Link>}
+                {comprado === true && <Link to={`/productos`} className='btn btn-primary'>Continuar comprando</Link>}
             </div>
             </div>
         </div>
