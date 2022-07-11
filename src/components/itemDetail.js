@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 
 function ItemDetail(props){
     const producto = props.producto[0];
+    const [ contador, setContador ] = useState(true);
+    const [ comprado, setComprado ] = useState(false);
 
     const onAdd =  (cantidad) =>{
         toast.success( cantidad + " items agregados al carrito", {
@@ -15,6 +18,8 @@ function ItemDetail(props){
             draggable: true,
             progress: undefined,
             });
+        setContador(false)
+        setComprado(true)
     }
 
     return(
@@ -31,7 +36,8 @@ function ItemDetail(props){
                     <p className="card-text">Categoria: {producto.categoria}.</p>
                     <p className="card-text text-muted">{producto.Precio}</p>
                 </div>
-                <ItemCount stock={producto.Stock} initial='1' onAdd={onAdd}/>
+                {contador === true &&<ItemCount stock={producto.Stock} initial='1' onAdd={onAdd}/>}
+                {comprado === true && <Link to={`/cart`} className='btn btn-primary'>Finalizar Compra</Link>}
             </div>
             </div>
         </div>
