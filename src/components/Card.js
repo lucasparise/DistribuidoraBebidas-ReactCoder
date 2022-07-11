@@ -1,7 +1,6 @@
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import './Card.css';
 import ItemCount from "./ItemCount.js"
-import ItemDetail from './itemDetail';
 import { Link } from "react-router-dom";
 import React from 'react';
 
@@ -18,12 +17,12 @@ function Card({Img, Nombre, Descripcion, Precio, Stock, ID, categoria}){
             progress: undefined,
             });
     }
-
+    
     return(
         <div className="card mb-3 anchoMax">
             <div className="row g-0">
             <div className="col-sm-4">
-            <Link to={`/producto/${Nombre.replace(" ", "-")}`}>
+            <Link to={`/producto/${ID}`}>
                 <button className='btn btn-outline-primary p-1 m-0'>
                     <img src={Img} className="img-fluid rounded-start" alt=""/>
                 </button>

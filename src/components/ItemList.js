@@ -5,7 +5,7 @@ function ItemList(props){
 
     return(
         <>
-        {props.productos.map(info => <Card key={info.Id} 
+        {props.productos.map(info => <Card ID={info.ID} 
                             Img={info.Imagen} 
                             Nombre={info.NombreProducto} 
                             Descripcion={info.Descripcion} 

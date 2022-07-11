@@ -6,20 +6,18 @@ function ItemDetailContainer(){
     
     const [ producto, setProducto ] = useState([]);
     const params = useParams();
-    console.log(params.productName)
+    let IDproducto = params.ID;
 
         useEffect( () =>{
             setTimeout(
                 ()=>{
                     fetch('../DATOS_PRUEBA.json')
                         .then(resp => resp.json())
-                        .then(data => setProducto(data.filter( (i) => i.NombreProducto===params.productName)))
+                        .then(data => setProducto(data.filter( (i) => parseInt(i.ID)===parseInt(IDproducto))))
                 },2000
             )
         }, [] );
-        console.log(producto)
-        console.log(producto[2])
-
+        
 
     return(
         <div>

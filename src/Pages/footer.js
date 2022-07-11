@@ -8,24 +8,24 @@ function footer(){
     return(
 
     <footer className="pieDePagina">
-    <div class="itemPie">
+    <div className="itemPie">
         <img className="imgfoot" src={iconoWP} alt="Wpicono"/>
-        <p class="my-3 color--textoCuerpo">1512345678</p>
+        <p className="my-3 color--textoCuerpo">1512345678</p>
     </div>
-    <div class="itemPie textoPie align-items-center" >
-        <p class="color--textoCuerpo">Seguinos en nuestras redes sociales:</p>
+    <div className="itemPie textoPie align-items-center" >
+        <p className="color--textoCuerpo">Seguinos en nuestras redes sociales:</p>
     </div>
-    <div class="itemPie">
+    <div className="itemPie">
         <a href="https://twitter.com/">
-            <img class="imgfoot"  src={iconoTW} alt="Twicono"/>
+            <img className="imgfoot"  src={iconoTW} alt="Twicono"/>
         </a>
 
         <a href="https://instagram.com/">
-            <img class="imgfoot" src={iconoIG} alt="Igicono"/>
+            <img className="imgfoot" src={iconoIG} alt="Igicono"/>
         </a>
 
         <a href="https://Facebook.com/">
-            <img class="imgfoot" src={iconoFB} alt="Fbicono"/>
+            <img className="imgfoot" src={iconoFB} alt="Fbicono"/>
         </a>
     </div>
 </footer>)

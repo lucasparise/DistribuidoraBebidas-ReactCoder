@@ -42,7 +42,7 @@ function Home(){
         <div className="d-flex flex-row container">
             <div className="col-4 px-0 px-lg-2">
                 <div className="iconos-home d-flex flex-column align-items-center align-items-lg-start flex-lg-row p-2">
-                    <img src={icoHome1} class="mr-2 mb-2 mb-lg-0"/>
+                    <img src={icoHome1} className="mr-2 mb-2 mb-lg-0"/>
                     <div className="text-center text-lg-left">
                         <h5 className="color--tituloCuerpo">PRACTICIDAD</h5>
                         <p className="color--textoCuerpo mx-2">Elegí día y hora. Evitá cargar bolsas desde el supermercado.</p>
@@ -52,7 +52,7 @@ function Home(){
 
             <div className="col-4 px-0 px-lg-2">
                 <div className="iconos-home d-flex flex-column align-items-center align-items-lg-start flex-lg-row p-2">
-                    <img src={icoHome2} class="mr-2 mb-2 mb-lg-0"/>
+                    <img src={icoHome2} className="mr-2 mb-2 mb-lg-0"/>
                     <div className="text-center text-lg-left">
                         <h5 className="color--tituloCuerpo">CONFIANZA</h5>
                         <p className="color--textoCuerpo mx-2">Garantía de cumplimiento y servicio de tu repartidor.</p>
