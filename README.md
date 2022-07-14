@@ -11,10 +11,10 @@
     - sweetalert
 
 
-#### Movedades:
+#### Novedades:
 
     - se implemento paginas de loading
     - armado de Readme
     - armado de context, aunque por el momento falla.
-    - correcciones indicadas de las devoluciones pasadas
+    - correccion de errores indicados en las devoluciones pasadas
 
