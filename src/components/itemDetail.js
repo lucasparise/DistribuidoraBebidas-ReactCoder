@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import {useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
+import CartContext from './CartContext';
 
 function ItemDetail(props){
-    const producto = props.producto[0];
+    const producto = props.producto;
+    const { onAdd } = useContext(CartContext);
     const [ contador, setContador ] = useState(true);
     const [ comprado, setComprado ] = useState(false);
 
-    const onAdd =  (cantidad) =>{
+    const agregarProducto =  (cantidad) =>{
         toast.success( cantidad + " items agregados al carrito", {
             position: "top-right",
             autoClose: 3000,
@@ -18,6 +20,7 @@ function ItemDetail(props){
             draggable: true,
             progress: undefined,
             });
+        onAdd(producto, cantidad)
         setContador(false)
         setComprado(true)
     }
@@ -36,7 +39,7 @@ function ItemDetail(props){
                     <p className="card-text">Categoria: {producto.categoria}.</p>
                     <p className="card-text text-muted">{producto.Precio}</p>
                 </div>
-                {contador === true &&<ItemCount stock={producto.Stock} initial='1' onAdd={onAdd}/>}
+                {contador === true &&<ItemCount stock={producto.Stock} initial='1' onAdd={agregarProducto}/>}
                 {comprado === true && <Link to={`/cart`} className='btn btn-success'>Finalizar Compra</Link>}
                 {comprado === true && <Link to={`/productos`} className='btn btn-primary'>Continuar comprando</Link>}
             </div>

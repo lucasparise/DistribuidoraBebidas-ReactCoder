@@ -7,7 +7,7 @@ import iconoFB from '../assets/facebook-icon.png';
 function footer(){
     return(
 
-    <footer className="pieDePagina">
+    <footer className="pieDePagina bottom-0">
     <div className="itemPie">
         <img className="imgfoot" src={iconoWP} alt="Wpicono"/>
         <p className="my-3 color--textoCuerpo">1512345678</p>
