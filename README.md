@@ -6,6 +6,15 @@
 
 ### Dependencias utilizadas:
 
-> bootstrap
-> toastify
-> sweetalert
+    - bootstrap
+    - toastify
+    - sweetalert
+
+
+#### Movedades:
+
+    - se implemento paginas de loding
+    - armado de Readme
+    - armado de context, aunque por el momento falla.
+    - correcciones indicadas de las devoluciones pasadas
+
