@@ -13,7 +13,7 @@
 
 #### Movedades:
 
-    - se implemento paginas de loding
+    - se implemento paginas de loading
     - armado de Readme
     - armado de context, aunque por el momento falla.
     - correcciones indicadas de las devoluciones pasadas
