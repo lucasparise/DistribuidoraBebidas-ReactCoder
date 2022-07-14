@@ -9,7 +9,7 @@ export const CartContextProvider = ({defaultValue=[],children}) =>{
     }
 
 
-    const estaEnCarrito = (id) => {
+    const estaEnCarrito = (id) => {  /* en el primer producto muestra bien, en el 2do no me trae el element */
             console.log(productosCarrito)
             console.log(id)
         return productosCarrito.some((element) => element.producto.ID === id)
