@@ -1,7 +1,6 @@
 import './css/NavBar.css';
 import CartWidget from '../components/CartWidget'
 import logo from "../assets/Icono.png";
-import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
@@ -20,17 +19,17 @@ function NavBar(){
                 <div className='collapse navbar-collapse  justify-content-end' id='navbarNav'>
                     <ul className='navbar-nav'>
                         <NavDropdown className='nav-item itemMenu' title="Productos" id="basic-nav-dropdown">
-                            <NavDropdown.Item className='itemMenu' href="/productos">Todos</NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Gaseosa">Gaseosa</NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Aperitivo">Aperitivo </NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Bebida blanca">Bebida blanca</NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Espumantes">Espumantes</NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Vinos">Vinos</NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Aguas">Aguas </NavDropdown.Item>
-                            <NavDropdown.Item className='itemMenu' href="/categoria/Licores">Licores</NavDropdown.Item>
+                            <NavLink className='itemMenu dropdown-item' to="/productos">Todos</NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Gaseosa">Gaseosa</NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Aperitivo">Aperitivo </NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Bebida blanca">Bebida blanca</NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Espumantes">Espumantes</NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Vinos">Vinos</NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Aguas">Aguas </NavLink>
+                            <NavLink className='itemMenu dropdown-item' to="/categoria/Licores">Licores</NavLink>
                         </NavDropdown>
-                        <Nav.Link className='nav-item itemMenu' href="/FAQ">Preguntas Frecuentes</Nav.Link>
-                        <Nav.Link className='nav-item itemMenu' href="/contacto">Contacto</Nav.Link>
+                        <NavLink className='nav-item itemMenu nav-link' to="/FAQ">Preguntas Frecuentes</NavLink>
+                        <NavLink className='nav-item itemMenu nav-link' to="/contacto">Contacto</NavLink>
                     </ul>
                     <CartWidget/>
                 </div>

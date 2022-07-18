@@ -1,5 +1,17 @@
 import React, { useState, createContext} from 'react';
 
+export const CartContext = createContext({})
+
+const {Provider} = CartContext
+
+/* const CartContext = createContext({
+    itemsCarrito: [],
+    onAdd: (producto, cantidad) =>{},
+    borrarCarrito: () => {},
+    borrarProducto: (id) => {},
+    isInCart: (id) => {},
+}); */
+
 export const CartContextProvider = ({defaultValue=[],children}) =>{
     
     const [ productosCarrito, setProductosCarrito ] = useState(defaultValue);
@@ -9,29 +21,26 @@ export const CartContextProvider = ({defaultValue=[],children}) =>{
     }
 
 
-    const estaEnCarrito = (id) => {  /* en el primer producto muestra bien, en el 2do no me trae el element */
-            console.log(productosCarrito)
-            console.log(id)
-        return productosCarrito.some((element) => element.producto.ID === id)
+    const estaEnCarrito = (id) => {  
+        return productosCarrito.find((element) => element.item.ID === id)
     }
 
     const onAdd = (producto, cantidad) => {
-        
-        if (estaEnCarrito(producto.ID)) {
-            const newCarrito = [...productosCarrito]
-            for (const element of newCarrito) {
-                if (element.producto.ID === producto.ID) {
-                    element.cantidad+=cantidad
+        console.log(producto, cantidad)
+
+        if (estaEnCarrito(producto.ID))  {
+
+            const newCart = [...productosCarrito]
+            for(const element of newCart){
+                if(element.item.ID === producto.ID){
+                    element.quantity = element.quantity + cantidad;
                 }
             }
-            setProductosCarrito(newCarrito)
-        } else {
-            setProductosCarrito(
-                [productosCarrito.push({producto,cantidad})]
-            ) 
-            
+            setProductosCarrito(newCart)
+
+        }else{
+            setProductosCarrito([...productosCarrito, {item: producto, quantity:cantidad}]);
         }
-        
     }
     
     const borrarProducto = (id) =>{
@@ -39,27 +48,16 @@ export const CartContextProvider = ({defaultValue=[],children}) =>{
         setProductosCarrito(nuevoCarrito);
     }
 
-    
+    const context ={
+        productosCarrito,
+        borrarCarrito,
+        borrarProducto,
+        onAdd,
+    }
     
     return(
-        <CartContext.Provider value={{
-            itemsCarrito:productosCarrito,
-            onAdd: onAdd,
-            borrarProducto: borrarProducto,
-            borrarCarrito: borrarCarrito,
-            estaEnCarrito: estaEnCarrito,
-        }}>
+        <Provider value={context}>
             {children}
-        </CartContext.Provider>
+        </Provider>
     )
 };
-
-const CartContext = createContext({
-    itemsCarrito: [],
-    onAdd: (producto, cantidad) =>{},
-    borrarCarrito: () => {},
-    borrarProducto: (id) => {},
-    isInCart: (id) => {},
-});
-
-export default CartContext;

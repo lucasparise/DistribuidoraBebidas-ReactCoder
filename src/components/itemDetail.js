@@ -2,7 +2,7 @@ import {useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
-import CartContext from './CartContext';
+import {CartContext} from './CartContext';
 
 function ItemDetail(props){
     const producto = props.producto;

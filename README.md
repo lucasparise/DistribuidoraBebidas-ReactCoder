@@ -13,8 +13,7 @@
 
 #### Novedades:
 
-    - se implemento paginas de loading
-    - armado de Readme
-    - armado de context, aunque por el momento falla.
-    - correccion de errores indicados en las devoluciones pasadas
+    - rearmado de navbar con Link
+    - CartContext OK
+
 
