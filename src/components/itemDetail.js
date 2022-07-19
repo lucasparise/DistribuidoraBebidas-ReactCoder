@@ -37,7 +37,7 @@ function ItemDetail(props){
                     <h5 className="card-title">{producto.NombreProducto}.</h5>
                     <p className="card-text">{producto.Descripcion}.</p>
                     <p className="card-text">Categoria: {producto.categoria}.</p>
-                    <p className="card-text text-muted">{producto.Precio}</p>
+                    <p className="card-text text-muted">${producto.Precio}</p>
                 </div>
                 {contador === true &&<ItemCount stock={producto.Stock} initial='1' onAdd={agregarProducto}/>}
                 {comprado === true && <Link to={`/cart`} className='btn btn-success'>Finalizar Compra</Link>}

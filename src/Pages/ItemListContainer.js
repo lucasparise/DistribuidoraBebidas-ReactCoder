@@ -19,7 +19,7 @@ function ItemListContainer(){
             .then(resp => resp.json())
             .then(data => setProductos(data))
             setLoading(false)
-            },3000)
+            },1000)
         }else{
             
             setTimeout(()=>{
@@ -27,7 +27,7 @@ function ItemListContainer(){
                 .then(resp => resp.json())
                 .then(data => setProductos(data.filter( (i) => i.categoria===Categoria)))
                 setLoading(false)
-            },2000)
+            },1000)
         }
     },[Categoria]); 
     

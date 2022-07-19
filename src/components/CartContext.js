@@ -4,14 +4,6 @@ export const CartContext = createContext({})
 
 const {Provider} = CartContext
 
-/* const CartContext = createContext({
-    itemsCarrito: [],
-    onAdd: (producto, cantidad) =>{},
-    borrarCarrito: () => {},
-    borrarProducto: (id) => {},
-    isInCart: (id) => {},
-}); */
-
 export const CartContextProvider = ({defaultValue=[],children}) =>{
     
     const [ productosCarrito, setProductosCarrito ] = useState(defaultValue);
@@ -26,7 +18,6 @@ export const CartContextProvider = ({defaultValue=[],children}) =>{
     }
 
     const onAdd = (producto, cantidad) => {
-        console.log(producto, cantidad)
 
         if (estaEnCarrito(producto.ID))  {
 
@@ -48,11 +39,27 @@ export const CartContextProvider = ({defaultValue=[],children}) =>{
         setProductosCarrito(nuevoCarrito);
     }
 
+    const totalProductos = () =>{
+        let cantidad = 0
+        productosCarrito.forEach((element) => cantidad = cantidad + element.quantity)
+        return cantidad
+    }
+
+    const precioTotal = () =>{
+        let total = 0
+        productosCarrito.forEach((element) => {
+            total = parseInt(total) + ( parseInt(element.quantity) * parseInt(element.item.Precio))
+        })
+        return total
+    }
+
     const context ={
         productosCarrito,
         borrarCarrito,
         borrarProducto,
         onAdd,
+        totalProductos,
+        precioTotal
     }
     
     return(

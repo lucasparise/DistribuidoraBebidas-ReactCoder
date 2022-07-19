@@ -13,7 +13,7 @@
 
 #### Novedades:
 
-    - rearmado de navbar con Link
-    - CartContext OK
+    - armado de Cart segun lo pedido en el desafio
+    - armado de CartWidget condicional para que no aparezca si no tiene productos.
 
 

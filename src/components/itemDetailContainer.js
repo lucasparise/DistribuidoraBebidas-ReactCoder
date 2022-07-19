@@ -17,7 +17,7 @@ function ItemDetailContainer(){
                         .then(resp => resp.json())
                         .then(data => setProducto(data.find( (i) => parseInt(i.ID)===parseInt(IDproducto))))
                         setLoading(false)
-                },2000
+                },1000
             )
         }, [IDproducto] );
         
