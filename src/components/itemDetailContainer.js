@@ -2,30 +2,33 @@ import ItemDetail from "./itemDetail";
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LoadingPage from '../components/LoadingPage'
+import {getFirestore, getDoc, doc} from 'firebase/firestore'
 
 function ItemDetailContainer(){
     const [ loading, setLoading ] = useState(true)
     const [ producto, setProducto ] = useState([]);
     const params = useParams();
     let IDproducto = params.ID;
-
+    
         useEffect( () =>{
+                const db = getFirestore();
+
+                const itemRef = doc(db, "items", (IDproducto))
             
-            setTimeout(
-                ()=>{
-                    fetch('../DATOS_PRUEBA.json')
-                        .then(resp => resp.json())
-                        .then(data => setProducto(data.find( (i) => parseInt(i.ID)===parseInt(IDproducto))))
-                        setLoading(false)
-                },1000
-            )
+                getDoc(itemRef).then ((snapshot) => {
+                if(snapshot.exists()){
+                setProducto(snapshot.data())
+                console.log(producto)
+                setLoading(false)
+                }
+            })
         }, [IDproducto] );
         
 
     return(
         <div>
                 { loading === true && <LoadingPage/> }
-                { producto.length !== 0 && <ItemDetail producto={producto} /> }  
+                <ItemDetail producto={producto} />
             
         </div>
     )

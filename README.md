@@ -8,12 +8,13 @@
 
     - bootstrap
     - toastify
-    - sweetalert
+    - sweetalert2
+    - Firebase
 
 
 #### Novedades:
 
-    - armado de Cart segun lo pedido en el desafio
-    - armado de CartWidget condicional para que no aparezca si no tiene productos.
+    - implementacion de Firebase, se toman los datos de la DB 
+    
 
 

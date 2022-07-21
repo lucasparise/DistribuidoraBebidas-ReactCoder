@@ -3,6 +3,8 @@ import ItemList from '../components/ItemList'
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import LoadingPage from '../components/LoadingPage'
+import {getFirestore, getDocs, collection, query, where } from 'firebase/firestore'
+
 
 function ItemListContainer(){
 
@@ -10,27 +12,25 @@ function ItemListContainer(){
     const [ productos, setProductos ] = useState([]);
     const params = useParams();
     let Categoria = params.category;
-    
-
     useEffect( () =>{
+
         if(Categoria === undefined ) {
-        setTimeout(()=>{
-            fetch('DATOS_PRUEBA.json')
-            .then(resp => resp.json())
-            .then(data => setProductos(data))
-            setLoading(false)
-            },1000)
-        }else{
-            
-            setTimeout(()=>{
-                fetch('../DATOS_PRUEBA.json')
-                .then(resp => resp.json())
-                .then(data => setProductos(data.filter( (i) => i.categoria===Categoria)))
+            const db = getFirestore();
+            const itemsRef = collection(db, "items")
+            getDocs(itemsRef).then ((snapshot) => {
+                setProductos(snapshot.docs.map((doc) => doc.data()))
                 setLoading(false)
-            },1000)
+            })
+            
+        }else{
+            const db = getFirestore();
+            const itemsCat = query(collection(db,"items"), where("categoria", "==", Categoria))
+            getDocs(itemsCat).then ((snapshot) => {
+                setProductos(snapshot.docs.map((doc) => doc.data()))
+                setLoading(false)
+            })
         }
     },[Categoria]); 
-    
 
     return(
         <div className='bgOndas cuerpoProducto justify-content-evenly m-0 '>
