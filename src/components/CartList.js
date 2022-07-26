@@ -5,7 +5,6 @@ import {toast} from 'react-toastify';
 function CartList (producto){
     const {borrarProducto} = useContext(CartContext);
     const item = producto
-    console.log(item.producto.item.ID)
     let subtotal = parseInt(item.producto.item.Precio)* parseInt(item.producto.quantity)
 
     const eliminarProducto = () =>{

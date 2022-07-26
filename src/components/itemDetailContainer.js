@@ -18,7 +18,6 @@ function ItemDetailContainer(){
                 getDoc(itemRef).then ((snapshot) => {
                 if(snapshot.exists()){
                 setProducto(snapshot.data())
-                console.log(producto)
                 setLoading(false)
                 }
             })

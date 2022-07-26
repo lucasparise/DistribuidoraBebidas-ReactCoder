@@ -1,3 +1,12 @@
 .bgOndas{
     background: url(/src/assets/bg-ondas.jpg) repeat center ;
 }
+
+.cuerpoCart{
+
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}

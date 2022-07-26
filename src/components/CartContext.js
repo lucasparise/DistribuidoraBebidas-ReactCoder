@@ -1,4 +1,5 @@
 import React, { useState, createContext} from 'react';
+import Swal from 'sweetalert2'
 
 export const CartContext = createContext({})
 
@@ -53,8 +54,19 @@ export const CartContextProvider = ({defaultValue=[],children}) =>{
         return total
     }
 
+    const popUpCarritoVacio = () =>{
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#bf0202',
+            title: 'Su carrito esta vacio',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+
     const context ={
         productosCarrito,
+        popUpCarritoVacio,
         borrarCarrito,
         borrarProducto,
         onAdd,
