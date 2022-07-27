@@ -49,7 +49,12 @@ function FormCopra (){
     const [ email, setEmail ] = useState("");
     const [ telefono, setTelefono ] = useState("");
     const [ direccion, setDireccion ] = useState("");
-    const [ nroOrden, setNroOrden ] = useState("0");
+    const [ dia, setDia ] = useState("");
+    const [ turno, setTurno ] = useState("");
+    const [ medioPago, setMedioPago ] = useState("");
+
+    const tiempoTranscurrido = Date.now();
+    const fecha = new Date(tiempoTranscurrido);
 
     const db = getFirestore();
 
@@ -62,23 +67,26 @@ function FormCopra (){
                 "email" : email,
                 "direccion": direccion,
             },
+            "entrega": {
+                "dia" : dia,
+                "turno" : turno,
+                "medioPago" : medioPago,
+            },
             "items": productosCarrito,
-            "date": Date.now(),
-            "total": precioTotal(),
+            "date": fecha.toLocaleDateString(),
+            "total": "$ "+precioTotal(),
         };
-        addDoc(collection(db, "orders"), sendOrder).then(({id}) => setNroOrden(id));
+        addDoc(collection(db, "orders"), sendOrder).then(({id}) => compraFinalizada(id));
         borrarCarrito();
-        console.log(nroOrden);
-        compraFinalizada(nroOrden);
     }
 
     const compraFinalizada = (numero) =>{
         Swal.fire({
             icon: 'success',
             iconColor: '#1ea300',
-            title: 'Su compra ha sido procesada su n° de comra es ' + numero ,
+            title: 'Su compra ha sido procesada su ID de compra es ' + numero ,
             showConfirmButton: false,
-            timer: 1500
+            timer: 3500
         })
 
     }
@@ -131,7 +139,7 @@ function FormCopra (){
 
                 <div className="col-md-4">
                     <label htmlFor="diaEntrega" className="form-label">Dia de entrega</label>
-                        <select className="form-select" id="diaEntrega" required name="diaEntrega">  
+                        <select className="form-select" id="diaEntrega" required name="diaEntrega" onChange={(event) => setDia(event.target.value)}>  
                             <option value="">elegir...</option>
                             <option>Lunes</option>
                             <option>Martes</option>
@@ -147,7 +155,7 @@ function FormCopra (){
 
                 <div className="col-md-4">
                     <label htmlFor="Turno" className="form-label">Turno</label>
-                        <select className="form-select" id="Turno" required name="Turno">
+                        <select className="form-select" id="Turno" required name="Turno" onChange={(event) => setTurno(event.target.value)}>
                             <option value="">elegir...</option>
                             <option>Mañana (8-12hs)</option>
                             <option>Tarde (12-18hs)</option>
@@ -159,7 +167,7 @@ function FormCopra (){
 
                 <div className="col-md-4">
                     <label htmlFor="formaPago" className="form-label">Forma de Pago</label>
-                        <select className="form-select" id="formaPago" required name="formaPago">
+                        <select className="form-select" id="formaPago" required name="formaPago" onChange={(event) => setMedioPago(event.target.value)}>
                             <option value="">elegir...</option>
                             <option>Efectivo</option>
                             <option>MercadoPago</option>
