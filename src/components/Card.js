@@ -23,8 +23,11 @@ function Card({Img, Nombre, Descripcion, Precio, Stock, ID, categoria}){
             <div className="row g-0">
             <div className="col-sm-4">
             <Link to={`/producto/${ID}`}>
-                <button className='btn btn-outline-primary p-1 m-0'>
-                    <img src={Img} className="img-fluid rounded-start" alt=""/>
+                <button className='btn btn-outline-primary p-1 m-0' style={{minWidth: 200}}>
+                    <img src={Img} className="img-fluid rounded-start" alt="" style={{
+                                                                                    height: 200,
+                                                                                    width: "auto"
+                                                                                }}/>
                 </button>
             </Link>
             </div>
@@ -32,7 +35,7 @@ function Card({Img, Nombre, Descripcion, Precio, Stock, ID, categoria}){
                 <div className="card-body">
                     <h5 className="card-title">{Nombre}.</h5>
                     <p className="card-text">Categoria: {categoria}.</p>
-                    <p className="card-text text-muted">${Precio}</p>
+                    <p className="card-text text-muted">${Precio} - ({Stock} disponibles)</p>
                 </div>
                 <ItemCount stock={Stock} initial='1' onAdd={onAdd}/>
             </div>

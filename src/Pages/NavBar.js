@@ -25,7 +25,6 @@ function NavBar(){
                             <NavLink className='itemMenu dropdown-item' to="/categoria/Bebida blanca">Bebida blanca</NavLink>
                             <NavLink className='itemMenu dropdown-item' to="/categoria/Espumantes">Espumantes</NavLink>
                             <NavLink className='itemMenu dropdown-item' to="/categoria/Vinos">Vinos</NavLink>
-                            <NavLink className='itemMenu dropdown-item' to="/categoria/Aguas">Aguas </NavLink>
                             <NavLink className='itemMenu dropdown-item' to="/categoria/Licores">Licores</NavLink>
                         </NavDropdown>
                         <NavLink className='nav-item itemMenu nav-link' to="/FAQ">Preguntas Frecuentes</NavLink>

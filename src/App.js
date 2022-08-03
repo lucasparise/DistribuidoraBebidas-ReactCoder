@@ -10,12 +10,11 @@ import ItemDetailContainer from './components/itemDetailContainer';
 import { ToastContainer} from 'react-toastify';
 import Cart from "./Pages/Cart";
 
-
 function App() {
   return (
     <CartContextProvider>
       <div className="App">
-        <NavBar/>
+        <NavBar/> 
         <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path="/inicio" element={<Home/>}></Route>
@@ -23,7 +22,7 @@ function App() {
           <Route path="/contacto" element={<Contacto/>}></Route>
           <Route path="/producto/:ID" element={<ItemDetailContainer />}></Route>
           <Route path="/categoria/:category" element={<ItemListContainer />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/cart" element={<Cart />}></Route> 
         </Routes>
         <ToastContainer />
       </div>
