@@ -1,5 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {CartContext} from '../components/CartContext';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import Swal from 'sweetalert2'
@@ -52,6 +53,7 @@ function FormCopra (){
     const [ dia, setDia ] = useState("");
     const [ turno, setTurno ] = useState("");
     const [ medioPago, setMedioPago ] = useState("");
+    const Navigate=useNavigate();
 
     const tiempoTranscurrido = Date.now();
     const fecha = new Date(tiempoTranscurrido);
@@ -80,12 +82,18 @@ function FormCopra (){
         borrarCarrito();
     }
 
+    
+
     const compraFinalizada = (numero) =>{
         Swal.fire({
             icon: 'success',
             iconColor: '#1ea300',
             title: 'Su compra ha sido procesada, su ID de compra es: ' + numero ,
             confirmButtonText: 'Aceptar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Navigate("/inicio")
+            }
         })
 
     }

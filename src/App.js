@@ -1,11 +1,12 @@
 import './App.css';
-import { Routes, Route} from 'react-router-dom';
+import {Navigate, Routes, Route} from 'react-router-dom';
 import { CartContextProvider } from './components/CartContext';
 import NavBar from './Pages/NavBar';
 import Home from './Pages/Home';
 import Footer from './Pages/footer';
 import Contacto from "./Pages/contacto"
 import FAQ from "./Pages/FAQ"
+import Page404 from "./Pages/Page404"
 import ItemListContainer from './Pages/ItemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer';
 import { ToastContainer} from 'react-toastify';
@@ -25,6 +26,8 @@ function App() {
           <Route path="/producto/:ID" element={<ItemDetailContainer />}></Route>
           <Route path="/categoria/:category" element={<ItemListContainer />}></Route>
           <Route path="/cart" element={<Cart />}></Route> 
+          <Route path="/notFound" element={<Page404 />} />
+          <Route path="*" element={<Navigate replace to="/notFound"/>} />
         </Routes>
         <ToastContainer />
       </div>

@@ -2,7 +2,7 @@
 
 ![](/public/Animation.gif)
 
-## Repositorio de e-commerce de ventas de productos de bebidas.
+## Repositorio de e-commerce de bebidas
 
 ### Dependencias utilizadas:
 
@@ -12,9 +12,12 @@
     - Firebase
 
 
-#### Novedades:
+#### La navegación incluye:
 
-    - implementacion de Firebase, se toman los datos de la DB 
-    
+    -  Home
+    -  Pagina con productos y navegacion por categorias
+    -  Pantalla de carrito y form de entrega
+    -  El usuario puede agregar productos tanto desde la pagina de productos, como la vista del detalle.
+
 
 

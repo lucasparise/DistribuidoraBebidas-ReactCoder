@@ -29,7 +29,7 @@ function ItemDetail(props){
         <div className="bgOndas">
             <div className="container">
                 <div className="row col-12 g-0 py-5">
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 mt-5">
                             <img src={producto.Imagen} className="img-fluid rounded-start" alt=""/>
                     </div>
                     
