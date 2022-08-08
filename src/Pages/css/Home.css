@@ -23,17 +23,6 @@
     font-size: 20px;
     color: #0284cd;
 }
-.ItemNuestroServicio::before {
-        font-family: "font awesome 5 free";
-        font-weight: 900;
-        content: '\f111';
-        position: absolute;
-        left: -30px;
-        top: 10px;
-        color: #62bdf2;
-        font-size: 20px;
-        line-height: 1;
-    }
 
 .bgAgua{
         background: url(/src/assets/imgAgua2.png) repeat center ;

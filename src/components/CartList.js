@@ -23,7 +23,7 @@ function CartList (producto){
     return(
     
         <li className="list-group-item d-flex justify-content-between lh-sm">
-            <button className="btn btn-danger me-4"  onClick={eliminarProducto}>X</button>
+            <button className="btn btn-danger me-4"  onClick={eliminarProducto} style={{height: '2.5rem',}}>X</button>
             <div className="flex-grow-1">
                 <h6 className="my-0">{item.producto.quantity}  x  {item.producto.item.NombreProducto}</h6>
                 <small className="text-muted">{item.producto.item.Descripcion}</small>

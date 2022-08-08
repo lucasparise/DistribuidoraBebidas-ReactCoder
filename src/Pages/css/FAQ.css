@@ -1,0 +1,18 @@
+.cuerpoFaq{
+    grid-area: Contenido;
+    width: 80%;
+    margin: 30px 10%;
+    padding: 20px;
+}
+
+.encabezado h1{
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 35px;
+    color: #0284cd;
+}
+
+.textoPreguntas{
+    font-family: 'Balsamiq Sans', cursive;
+    color: #0284cd;
+    font-size: 18px;
+}

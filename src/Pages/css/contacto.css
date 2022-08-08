@@ -1,0 +1,48 @@
+@media (max-width: 1024px){
+    .contactForm{
+        width: 90%; 
+        margin: 80px 5%;
+    }
+}
+
+.cuerpoContacto{
+    width: 100%;
+    font-family: 'Balsamiq Sans', cursive;
+    color: #0284cd;
+}
+
+.imputcompleto{
+    width: 70%;
+}
+
+.contactForm{
+    width: 80%;
+    height: auto;
+    margin: 40px 10%;
+    border-radius: 10px;  
+    padding: 1% 5%; 
+    background-color: #f0f0f0;
+}
+.imputTexto{
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color:black; 
+        width: 75%; 
+        width: 70%;
+        height: 30px;
+    }
+.textoForm{
+        width: 60px;
+        font-size: 16px;
+    }
+
+
+.formulario label{
+    margin: 10px;
+}
+
+.formulario p{
+    margin-top: 20px;
+    margin-left: 10px;
+}

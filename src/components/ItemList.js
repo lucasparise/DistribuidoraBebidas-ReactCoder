@@ -7,8 +7,8 @@ function ItemList(props){
         <>
         {props.productos.map(info => <Card key={info.ID}
                             ID={info.ID}
-                            Img={info.Imagen} 
-                            Nombre={info.NombreProducto} 
+                            Imagen={info.Imagen} 
+                            NombreProducto={info.NombreProducto} 
                             Descripcion={info.Descripcion} 
                             Precio={info.Precio} 
                             Stock={info.Stock}

@@ -3,7 +3,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import icoHome1 from '../assets/iconos-home-01.svg'
 import icoHome2 from '../assets/iconos-home-02.svg'
 import icoHome3 from '../assets/iconos-home-03.svg'
+import imgcar2 from '../assets/imgCar2.webp'
 import imgcar3 from '../assets/imgCar3.jpg'
+
 
 function Home(){
 
@@ -13,22 +15,13 @@ function Home(){
             <Carousel.Item>
                 <img className="d-block w-100" src={imgcar3} alt="First slide"/>
                 <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h1>Distribuidora DP</h1>
+                <h4>Tu tienda de bebidas</h4>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img className="d-block w-100"src={imgcar3}alt="Second slide"/>
+                <img className="d-block w-100"src={imgcar2}alt="Second slide"/>
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img className="d-block w-100"src={imgcar3}alt="Third slide"/>
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             </Carousel>
@@ -72,19 +65,19 @@ function Home(){
         </div>
 
 
-    <div className="container">
+    <div className="container mb-5">
         <div className="col-lg-12 m-0">
             <h2 className="titulo color--tituloCuerpo">Nuestro Servicio:</h2>
         </div>
         <div className="row col-lg-5 mb-0 px-4 align-top color--textoCuerpo divNuestroServicio">
             <div className="ItemNuestroServicio m-3">
-            El catalogo mas completo de bedidas y stock permanente.
+                ► El catalogo mas completo de bedidas y stock permanente.
             </div>
             <div className="ItemNuestroServicio m-3">
-                Envios a todo CABA y AMBA (consultar precios).
+                ► Envios a todo CABA y AMBA (consultar precios).
             </div>
             <div className="ItemNuestroServicio m-3">
-                Aceptamos todas las tarjetas y medios de pago.
+                ► Aceptamos todas las tarjetas y medios de pago.
             </div>
         </div>
     </div>

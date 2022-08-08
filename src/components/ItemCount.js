@@ -32,14 +32,20 @@ function ItemCount({stock, initial, onAdd}){
     
     return(
         
+        
+
         <div className='input-group justify-content-evenly px-5'>
+
+            {stock === 0 && <button className='btn btn-danger'>Producto sin stock</button>}
             
-            <button className='btn btn-outline-primary' onClick={restar}>-</button>
-            <input className='form-control text-center fw-bold' type='text' value={num} disabled readOnly></input>
-            <div className='d-flex'>
-                <button className='btn btn-outline-primary' onClick={sumar}>+</button>
-                <button className='btn btn-primary' onClick={() =>onAdd(num)}>Agregar</button>
-            </div>
+            {stock !== 0 && <>
+                <button className='btn btn-outline-primary' onClick={restar}>-</button>
+                <input className='form-control text-center fw-bold' type='text' value={num} disabled readOnly></input>
+                <div className='d-flex'>
+                    <button className='btn btn-outline-primary' onClick={sumar}>+</button>
+                    <button className='btn btn-primary' onClick={() =>onAdd(num)}>Agregar</button>
+                </div>
+            </>}
         </div> 
     )
 }

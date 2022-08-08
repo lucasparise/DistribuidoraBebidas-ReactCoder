@@ -84,16 +84,15 @@ function FormCopra (){
         Swal.fire({
             icon: 'success',
             iconColor: '#1ea300',
-            title: 'Su compra ha sido procesada su ID de compra es ' + numero ,
-            showConfirmButton: false,
-            timer: 3500
+            title: 'Su compra ha sido procesada, su ID de compra es: ' + numero ,
+            confirmButtonText: 'Aceptar',
         })
 
     }
 
     return(
-    <div className="col-md-7 col-lg-8">
-        <h4 className="mb-3">Formulario de entrega</h4>
+    <div className="col-md-7 col-lg-8 ">
+        <h3 className="mb-3 color--tituloCuerpo mb-5">Formulario de entrega</h3>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <div className="row g-3">
 
